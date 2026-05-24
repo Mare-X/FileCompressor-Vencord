@@ -1,8 +1,8 @@
-# File Compressor (Vencord userplugin)
+# File Compressor (Vencord plugin)
 
 Automatically compresses **images** and **videos** so they fit Discord’s upload limit before you send them. Built for the **10 MB** free tier, with presets for 25 MB / Nitro limits or a custom cap.
 
-Processing runs **entirely in your browser** (ffmpeg.wasm for video). Nothing is uploaded to a third-party server.
+Processing runs **entirely in your browser/app** (ffmpeg.wasm for video). Nothing is uploaded to a third-party server.
 
 ## Features
 
@@ -49,11 +49,8 @@ Processing runs **entirely in your browser** (ffmpeg.wasm for video). Nothing is
 
 ## How to upload a large video (important)
 
-Discord blocks oversized files **before** our code can run if you only use the normal + button on some builds.
+Use the **bar-chart icon** button in the chat bar (left of the text box, with the other + / GIF buttons). Tooltip: **“Compress & attach”**. Pick your MP4 → wait for compression toasts → file appears in the draft.
 
-**Reliable method:** use the **bar-chart icon** button in the chat bar (left of the text box, with the other + / GIF buttons). Tooltip: **“Compress & attach”**. Pick your MP4 → wait for compression toasts → file appears in the draft.
-
-**Also try:** normal **+ attach** with **Intercept file picker** enabled (default) — should show `Compressing …` toasts in the console filter `[FileCompressor]`.
 
 ## Troubleshooting
 
@@ -71,10 +68,6 @@ The console messages `AnalyticsTrackImpressionContext` and `Artboard BaseGlowRem
 - Video compression is **CPU-heavy** and can take minutes for long clips.
 - First video compress downloads ffmpeg.wasm from jsDelivr (~31 MB).
 - Discord’s real limit may differ slightly from documented caps; the safety margin helps.
-
-## Author ID
-
-Replace `authors: [{ name: "Marex", id: 0n }]` in `index.tsx` with your Discord user id if you want attribution in the plugin list.
 
 ## License
 
